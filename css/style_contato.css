@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.contato-container {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contato-info {
+    background-color: #154e68;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.contato-info h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.contato-info p,
+.contato-info ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contato-info ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.contato-info li {
+    margin-bottom: 15px;
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-grupo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: #b35606;
+    outline: none;
+}
+
+.form-grupo textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.btn-principal {
+    display: inline-flex;
+    align-items: center;
+    background-color: #b35606;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #331f12;
+}

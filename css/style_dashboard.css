@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.titulo-secao {
+    margin-bottom: 30px;
+}
+
+.titulo-secao h1 {
+    color: #154e68;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.titulo-secao p {
+    color: #666;
+    font-size: 14px;
+}
+
+.cabecalho-tabela {
+    margin-bottom: 20px !important;
+}
+
+.indicadores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.kpi-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(209, 33, 33, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kpi-titulo {
+    font-size: 13px;
+    color: #c974b8;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.kpi-valor {
+    font-size: 28px;
+    font-weight: bold;
+    color: #154e68;
+}
+
+.galeria-secao {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+figure {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+figcaption {
+    font-size: 14px;
+    color: #444;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.tabela-secao,
+.tabela-container {
+    margin-top: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.tabela-responsiva {
+    overflow-x: auto;
+}
+
+table,
+.tabela-dashboard {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f7f9fa;
+    color: #555;
+    font-weight: bold;
+}
+
+.tabela-dashboard tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pedido-id,
+.pedido-valor {
+    font-weight: bold;
+    color: #d56a6a;
+}
+
+.pedido-data {
+    color: #666;
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-concluido {
+    background-color: #e2fcd7;
+    color: #2b7a0b;
+}
+
+.status-processamento {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-enviado {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-andamento {
+    background-color: #fff9c4;
+    color: #f57f17;
+}
+
+.footer-site {
+    background-color: #154e68;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+.footer-conteudo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-coluna h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-coluna ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.footer-coluna p {
+    max-width: 300px;
+    line-height: 1.6;
+    margin: 0;
+}

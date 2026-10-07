@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TênisEspress</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_dashboard.css">
+</head>
+
+<body>
+    <nav class="menu-container">
+        <div class="menu-esquerdo">
+            <a href="img/Logomarca.jpg" class="logo">TênisEspress</a>
+        </div>
+
+        <ul class="menu-centro">
+            <li><a href="index.html">Início</a></li>
+            <li class="tem-submenu">
+                <a href="produtos.html">Serviços ▾</a>
+                <ul class="submenu">
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                </ul>
+            </li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <div class="menu-direito">
+            <a href="login.html" class="link-login">Entrar / Login</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+
+        <div class="titulo-secao">
+            <h1>Dashboard</h1>
+            <p>Painel administrativo para acompanhar pedidos, métricas e destaques.</p>
+        </div>
+
+        <div class="indicadores-grid">
+            <div class="kpi-card">
+                <div class="kpi-titulo">Pedidos Hoje</div>
+                <div class="kpi-valor">48</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-titulo">Produtos</div>
+                <div class="kpi-valor">32</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-titulo">Clientes</div>
+                <div class="kpi-valor">127</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-titulo">Faturamento</div>
+                <div class="kpi-valor">R$ 2.480</div>
+            </div>
+        </div>
+
+        <div class="tabela-secao">
+            <div class="titulo-secao cabecalho-tabela">
+                <h2>Pedidos Recentes & Principais Clientes</h2>
+                <p>Acompanhe as últimas transações, o volume gasto pelos clientes e o status atual de entrega.</p>
+            </div>
+
+            <div class="tabela-responsiva">
+                <table class="tabela-dashboard">
+                    <thead>
+                        <tr>
+                            <th>Pedido</th>
+                            <th>Cliente</th>
+                            <th>Total Gasto</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pedido-id">#1048</td>
+                            <td>Mariana Souza</td>
+                            <td class="pedido-valor">R$ 450,00</td>
+                            <td class="pedido-data">Hoje, 14:22</td>
+                            <td><span class="status-badge status-concluido">Concluído</span></td>
+                        </tr>
+                        <tr>
+                            <td class="pedido-id">#1047</td>
+                            <td>Carlos Eduardo</td>
+                            <td class="pedido-valor">R$ 890,00</td>
+                            <td class="pedido-data">Hoje, 11:05</td>
+                            <td><span class="status-badge status-processamento">Em Processamento</span></td>
+                        </tr>
+                        <tr>
+                            <td class="pedido-id">#1046</td>
+                            <td>Ana Beatriz Lima</td>
+                            <td class="pedido-valor">R$ 320,00</td>
+                            <td class="pedido-data">Ontem</td>
+                            <td><span class="status-badge status-enviado">Enviado</span></td>
+                        </tr>
+                        <tr>
+                            <td class="pedido-id">#1045</td>
+                            <td>Lucas Gabriel</td>
+                            <td class="pedido-valor">R$ 1.250,00</td>
+                            <td class="pedido-data">21/09/2026</td>
+                            <td><span class="status-badge status-concluido">Concluído</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="galeria-secao">
+            <div class="titulo-secao">
+                <h2>Destaques da Semana</h2>
+                <p>Principais lançamentos em exibição.</p>
+            </div>
+            <div class="galeria-grid">
+                <figure>
+                    <img src="img/tenis_01.webp" alt="Tênis Adidas Branco e Preto">
+                    <figcaption>Tênis Adidas Ownthegame 3.0 - Branco+Preto</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/Tenis_02.jpg" alt="Tênis Adidas Vermelho e Preto">
+                    <figcaption>Tênis Adidas Ownthegame 3.0 - Vermelho+Preto</figcaption>
+                </figure>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer-site">
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Contatos</h3>
+                <ul>
+                    <li>E-mail: contato@tenisespress.com</li>
+                    <li>Telefone: (81) 99999-9999</li>
+                    <li>Recife - PE</li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Sobre nós</h3>
+                <p>Somos um site dedicado a facilitar suas compras e organizar o seu dia a dia com praticidade e estilo.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

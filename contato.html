@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Meu Site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_contato.css">
+</head>
+
+<body>
+    <nav class="menu-container">
+        <div class="menu-esquerdo">
+            <a href="img/Logomarca.jpg" class="logo">TênisEspress</a>
+        </div>
+
+        <ul class="menu-centro">
+            <li><a href="index.html">Início</a></li>
+            <li class="tem-submenu">
+                <a href="produtos.html">Serviços ▾</a>
+                <ul class="submenu">
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                </ul>
+            </li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <div class="menu-direito">
+            <a href="login.html" class="link-login">Entrar / Login</a>
+        </div>
+    </nav>
+
+    <div class="contato-container">
+
+        <div class="contato-info">
+            <h2>Fale conosco</h2>
+            <p>Informações da TênisEspress</p>
+
+            <strong>Endereço</strong>
+            <p>Rua das Princesas, 100 - Recife/PE</p>
+
+            <strong>Telefone</strong>
+            <p>(81) 3333-4444</p>
+
+            <strong>E-mail</strong>
+            <p>contato@tenisespress.com.br</p>
+        </div>
+
+        <div class="contato-formulario">
+            <form>
+                <div class="form-grupo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto">
+                        <option>Dúvida</option>
+                        <option>Pedido</option>
+                        <option>Entrega</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" placeholder="Digite sua mensagem"></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal">Enviar mensagem</button>
+            </form>
+        </div>
+
+    </div>
+    <footer class="footer-site">
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Contatos</h3>
+                <ul>
+                    <li>E-mail: contato@tenisespress.com</li>
+                    <li>Telefone: (81) 99999-9999</li>
+                    <li>Recife - PE</li>
+                </ul>
+            </div>
+
+            <div class="footer-coluna">
+                <h3>Sobre nós</h3>
+                <p>Somos um site dedicado a facilitar suas compras e organizar o seu dia a dia com praticidade e estilo.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

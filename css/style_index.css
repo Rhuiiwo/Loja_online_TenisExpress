@@ -1,0 +1,214 @@
+.dashboard-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.banner-destaque {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #e9f0f5;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.03);
+    flex-wrap: wrap;
+}
+
+.banner-info {
+    flex: 1.2;
+    min-width: 280px;
+}
+
+.badge-estoque {
+    background-color: #ffcc00;
+    color: #222;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.banner-info h1 {
+    font-size: 38px;
+    color: #d59f59;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.banner-info p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.banner-botoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-primario {
+    background-color: #154e68;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-primario:hover {
+    background-color: #0f394d;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #154e68;
+    border: 2px solid #154e68;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secundario:hover {
+    background-color: #154e68;
+    color: white;
+}
+
+.banner-imagem {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-imagem img {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.titulo-ofertas {
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-produto-oferta {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 0;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.card-imagem-container {
+    position: relative;
+}
+
+.badge-desconto {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e74c3c;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.card-imagem-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.card-legenda {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.card-legenda strong {
+    display: block;
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+    display: block;
+}
+
+.preco-novo {
+    color: #27ae60;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn-comprar-card {
+    display: block;
+    text-align: center;
+    background: #154e68;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-comprar-card:hover {
+    background: #0f394d;
+}
+
+/* Rodapé Específico da Dashboard */
+.footer-container-dashboard {
+    background-color: #154e68;
+    color: white;
+    padding: 30px 20px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-lista-dashboard {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.footer-descricao-dashboard {
+    max-width: 300px;
+    line-height: 1.6;
+    margin: 0;
+}
