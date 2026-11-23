@@ -6,31 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - Pulse</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
+
 </head>
 
 <body>
     <nav class="menu-container">
         <div class="logo">
-            <img src="img/logopulse.png" PULSE">
+            <img src="img/logopulse.png" PULSE>
             <span>PULSE</span>
         </div>
 
         <ul class="menu-centro">
-            <li><a href="index.html">Início</a></li>
+            <li><a href="index.php">Início</a></li>
             <li class="tem-submenu">
-                <a href="produtos.html">Serviços ▾</a>
+                <a href="produtos.php">Serviços ▾</a>
                 <ul class="submenu">
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="produtos.php">Produtos</a></li>
+                    <li><a href="carrinho.php">Carrinho</a></li>
                 </ul>
             </li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="sobre.php">Sobre</a></li>
+            <li><a href="contato.php">Contato</a></li>
         </ul>
 
         <div class="menu-direito">
-            <a href="login.html" class="link-login">Entrar / Login</a>
+            <a href="login.php" class="link-login">Entrar / Login</a>
+            <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Ativar tema escuro" aria-pressed="false">🌙</button>
         </div>
     </nav>
 
@@ -93,6 +96,7 @@
     </main>
 
     <footer class="footer-site">
+        <p>© <?= date("Y") ?> PULSE </p>
         <div class="footer-conteudo">
             <div class="footer-coluna">
                 <h3>Contatos</h3>
