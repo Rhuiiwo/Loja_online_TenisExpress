@@ -7,6 +7,7 @@
     <title>Produtos - Pulse</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/site.js" defer></script>
+    <script src="js/carrinho.js" defer></script>
 </head>
 
 <body>

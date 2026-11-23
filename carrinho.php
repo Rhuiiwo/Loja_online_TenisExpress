@@ -7,6 +7,7 @@
     <title>Carrinho - Pulse</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/site.js" defer></script>
+    <script src="js/carrinho.js" defer></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
 
     <div class="carrinho-container-geral">
         <div class="titulo-secao">
-            <h1>SEU CARRINHO <span id="contador-titulo-carrinho" style="font-size: 16px; font-weight: normal; color: #666;">(0 produtos)</span></h1>
+            <h1>SEU CARRINHO <span id="contador-titulo-carrinho" style="font-size: 16px; font-weight: 700; color: var(--pulse-lima);">(0 produtos)</span></h1>
             <p>Os itens do seu carrinho não estão reservados. Finalize esta compra para garantir o seu!</p>
         </div>
 
