@@ -10,11 +10,11 @@ A navegação superior dá acesso ao início, catálogo, informações da loja, 
 
 ## Localizar produtos
 
-Abra **Produtos** para consultar as categorias. Digite um nome ou característica no campo de busca para filtrar os itens. Use **Ver detalhes** para abrir as informações do produto.
+Abra **Produtos** para consultar as categorias e itens disponíveis. 
 
 ## Montar o carrinho
 
-Selecione **+ 🛒** em um cartão para adicionar o produto ao carrinho. O ícone do carrinho apresenta a quantidade de itens. No painel, é possível remover produtos, consultar o total e avançar para o pagamento. Os itens ficam no armazenamento local do navegador.
+Selecione **Adicionar ao Carrinho** em um item para adicionar o produto ao carrinho. O ícone do carrinho apresenta a quantidade de itens. No painel, é possível remover produtos, consultar o total e avançar para o pagamento. Os itens ficam no armazenamento local do navegador.
 
 ## Criar conta ou entrar
 
@@ -33,5 +33,4 @@ Os campos mudam conforme a opção selecionada. Dados de pagamento não são arm
 
 ## Preferências e atendimento
 
-Use o botão de tema no cabeçalho para alternar entre as aparências clara e escura. 
 A página **Contatos** informa os canais e horários de atendimento.

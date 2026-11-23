@@ -21,7 +21,7 @@ O projeto busca facilitar a compra de tenis, com varias opções de modelos e pr
 | --- | --- |
 | `index.php` | Apresentação, carrossel e produtos em destaque. |
 | `produtos.php` | Catálogo, busca e ações para adicionar itens ao carrinho. |
-| `detalhes_produto.php` | Informações detalhadas do produto em destaque. |
+| `carrinho.php` | Informações detalhadas dos valores dos produto selecionados. |
 | `dashboard.php` | Acesso ao carrinho e atalhos da conta. |
 | `pagamento.php` | Seleção do método e campos correspondentes. |
 | `cadastro.php` e `login.php` | Criação de conta e autenticação. |
