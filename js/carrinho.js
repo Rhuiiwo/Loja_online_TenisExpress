@@ -145,11 +145,14 @@
         itens.forEach(item => {
             const linha = criarElemento("li", "item-produto-destaque");
 
+            const quadroImagem = criarElemento("div", "item-imagem-quadro");
+
             const imagem = document.createElement("img");
             imagem.src = item.imagem;
             imagem.alt = item.nome;
             imagem.loading = "lazy";
             imagem.className = "item-imagem-pequena";
+            quadroImagem.append(imagem);
 
             const detalhes = criarElemento("div", "item-info-detalhe");
             detalhes.append(
@@ -185,7 +188,7 @@
                 formatarMoeda(item.preco * item.quantidade)
             );
 
-            linha.append(imagem, detalhes, controles, subtotal);
+            linha.append(quadroImagem, detalhes, controles, subtotal);
             lista.append(linha);
         });
 
@@ -263,4 +266,3 @@
     // Executa também se este script for carregado depois do DOMContentLoaded.
     if (document.readyState !== "loading") atualizarInterface();
 })();
-

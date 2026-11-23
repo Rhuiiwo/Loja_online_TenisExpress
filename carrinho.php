@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho - Pulse</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <script src="js/site.js" defer></script>
-    <script src="js/carrinho.js" defer></script>
+    <script src="js/carrinho.js?v=3" defer></script>
 </head>
 
 <body>
