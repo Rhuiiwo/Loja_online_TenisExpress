@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!pulse_valid_csrf($_POST['csrf_token'] ?? null)) {
         $mensagem = 'Sua sessão expirou. Atualize a página e tente novamente.';
     } else {
-        $email = strtolower(trim((string) ($_POST['email'] ?? '')));
-        $senha = (string) ($_POST['senha'] ?? '');
+        $email = is_string($_POST['email'] ?? null) ? strtolower(trim($_POST['email'])) : '';
+        $senha = is_string($_POST['senha'] ?? null) ? $_POST['senha'] : '';
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $senha === '') {
             $mensagem = 'Informe um e-mail válido e sua senha.';
@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 require_once __DIR__ . '/database/conexao.php';
                 $pdo = pulse_db();
                 $consulta = $pdo->prepare(
-                    'SELECT id, nome, senha_hash, tipo FROM usuarios WHERE email = :email LIMIT 1'
+                    'SELECT id, nome, senha_hash, tipo FROM usuarios WHERE email = :email AND status = :status LIMIT 1'
                 );
-                $consulta->execute(['email' => $email]);
+                $consulta->execute(['email' => $email, 'status' => 'Ativo']);
                 $usuario = $consulta->fetch();
 
                 if ($usuario && password_verify($senha, $usuario['senha_hash'])) {
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $mensagem = 'E-mail ou senha inválidos.';
             } catch (PDOException $exception) {
-                error_log($exception->getMessage());
+                error_log('PULSE: falha no login.');
                 $mensagem = 'Não foi possível entrar. Confira a configuração do banco de dados.';
             }
         }
@@ -52,9 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="js/site.js" defer></script>
 </head>
 <body>
+    <header>
     <nav class="menu-container">
         <div class="logo">
-            <img src="img/logopulse.png" PULSE>
+            <img src="img/logopulse.png" alt="PULSE">
             <span>PULSE</span>
         </div>
 
@@ -70,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="sobre.php">Sobre</a></li>
             <li><a href="contato.php">Contato</a></li>
-            <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Ativar tema escuro" aria-pressed="false">🌙</button>
+            <li><button class="theme-toggle" type="button" id="theme-toggle" aria-label="Ativar tema escuro" aria-pressed="false">🌙</button></li>
         </ul>
     </nav>
 </header>    
@@ -78,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container-central">
         <div class="login-formulario">
             <form action="login.php" method="post">
+                <input type="hidden" name="csrf_token" value="<?= pulse_h(pulse_csrf_token()) ?>">
                 <h2 class="login-titulo">Área de Login</h2>
 
                 <div class="form-grupo">
@@ -90,8 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" id="senha" name="senha" placeholder="digite sua senha" required>
                 </div>
 
-                <button type="submit" class="btn-secundario">Entrar</button>
+                <button type="submit" class="btn-primario">Entrar</button>
             </form>
+            <p class="form-status" role="status"><?= pulse_h($mensagem) ?></p>
 
             <p class="text-center">
                 <a class="button-link" href="cadastro.php">Criar uma conta</a>
@@ -115,8 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="footer-coluna">
                 <h3>Sobre nós</h3>
-         </div>
-    </div>         <p>Somos um site dedicado a facilitar suas compras e organizar o seu dia a dia com praticidade e estilo.
+                <p>Somos um site dedicado a facilitar suas compras e organizar o seu dia a dia com praticidade e estilo.
                 </p>
             </div>
         </div>

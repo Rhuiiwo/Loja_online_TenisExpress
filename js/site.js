@@ -5,7 +5,7 @@ const VALOR_FRETE_PADRAO = 15.00;
 const PERCENTUAL_DESCONTO = 0.05; // 5% de desconto sobre o subtotal
 
 document.documentElement.dataset.theme =
-    localStorage.getItem('pulse-theme') === 'dark' ? 'dark' : 'light';
+    (localStorage.getItem('pulse-theme') ?? localStorage.getItem('pcstore-theme')) === 'dark' ? 'dark' : 'light';
 
 function converterPrecoParaNumero(valorOuTexto) {
     if (typeof valorOuTexto === 'number') {
@@ -287,10 +287,10 @@ function configurarTema() {
         botaoTema.setAttribute('aria-pressed', String(escuro));
         botaoTema.setAttribute('aria-label', escuro ? 'Ativar tema claro' : 'Ativar tema escuro');
         botaoTema.textContent = escuro ? '☀️' : '🌙';
-        localStorage.setItem('pcstore-theme', tema);
+        localStorage.setItem('pulse-theme', tema);
     }
 
-    aplicarTema(localStorage.getItem('pcstore-theme') === 'dark' ? 'dark' : 'light');
+    aplicarTema(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
     botaoTema.addEventListener('click', function () {
         aplicarTema(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
     });

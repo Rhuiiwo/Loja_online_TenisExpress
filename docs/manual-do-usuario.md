@@ -1,4 +1,4 @@
-# Manual de uso
+# Manual do usuário — PULSE
 
 ## Acessar a PULSE
 
@@ -18,7 +18,31 @@ Selecione **Adicionar ao Carrinho** em um item para adicionar o produto ao carri
 
 ## Criar conta ou entrar
 
-Use **Cadastro** para criar uma conta com nome, e-mail e senha de pelo menos oito caracteres. Para uma conta existente, use **Login** com o e-mail e a senha cadastrados.
+1. Abra a página de cadastro.
+2. Informe nome, e-mail e senha de pelo menos oito caracteres.
+3. Selecione um setor disponível e o perfil Cliente, permitido no cadastro público.
+4. Clique em Cadastrar. Corrija eventuais mensagens de validação.
+5. Para entrar novamente, utilize o e-mail e a senha cadastrados na página Login.
+
+O e-mail deve ser único. Contas baixadas não podem autenticar-se.
+
+## Gestão de usuários (administrador)
+
+1. Entre com uma conta administrativa de homologação fornecida pela equipe.
+2. No Dashboard, clique em **Gestão de usuários**.
+3. Consulte os usuários ativos, seus setores, perfis e status.
+4. Pesquise por nome ou e-mail. Use **Limpar** para retornar à lista completa.
+
+### Excluir um usuário
+
+1. Localize o usuário e clique em **Excluir**.
+2. Confira a identificação do usuário na confirmação “Deseja realmente excluir este usuário?”.
+3. Clique em **Cancelar** para manter o cadastro ou em **Confirmar** para realizar a baixa.
+4. Após a confirmação bem-sucedida, o usuário deixa de aparecer na lista de ativos, mas seu registro permanece no banco.
+
+A operação é restrita a administradores e registrada em auditoria. Uma tentativa repetida sobre usuário já baixado não deve produzir nova baixa. Usuários comuns não têm acesso à gestão administrativa.
+
+Não utilize contas reais para demonstrar a exclusão.
 
 ## Revisar o método de pagamento
 

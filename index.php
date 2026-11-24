@@ -46,8 +46,8 @@
                 <p>Aproveite as ofertas de boas-vindas da TênisEspress. Encontre calçados que unem conforto,
                     durabilidade e as principais tendências com frete especial.</p>
                 <div class="banner-botoes">
-                    <a href="produtos.html" class="btn-primario">Ver Produtos</a>
-                    <a href="sobre.html" class="btn-secundario">Saiba Mais</a>
+                    <a href="produtos.php" class="btn-primario">Ver Produtos</a>
+                    <a href="sobre.php" class="btn-secundario">Saiba Mais</a>
                 </div>
                 <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Ativar tema escuro" aria-pressed="false">🌙</button>
             </div>
@@ -74,7 +74,7 @@
                         <strong>Tênis Adidas Ownthegame 3.0</strong>
                         <span class="preco-antigo">R$ 699,90</span>
                         <span class="preco-novo">R$ 594,90</span>
-                        <a href="carrinho.html" class="btn-comprar-card">Comprar Agora</a>
+                        <a href="carrinho.php" class="btn-comprar-card">Comprar Agora</a>
                     </figcaption>
                 </figure>
 
@@ -87,7 +87,7 @@
                         <strong>Tênis Adidas Ownthegame Vermelho</strong>
                         <span class="preco-antigo">R$ 749,90</span>
                         <span class="preco-novo">R$ 599,90</span>
-                        <a href="carrinho.html" class="btn-comprar-card">Comprar Agora</a>
+                        <a href="carrinho.php" class="btn-comprar-card">Comprar Agora</a>
                     </figcaption>
                 </figure>
 

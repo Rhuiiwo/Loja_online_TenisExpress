@@ -1,6 +1,17 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
 $usuarioNome = $_SESSION['usuario_nome'] ?? null;
+$cadastroSucesso = $_SESSION['pulse_cadastro_sucesso'] ?? null;
+unset($_SESSION['pulse_cadastro_sucesso']);
+$administrador = false;
+if (!empty($_SESSION['usuario_id'])) {
+    try {
+        require_once __DIR__ . '/database/conexao.php';
+        $administrador = pulse_is_admin(pulse_db());
+    } catch (PDOException $exception) {
+        error_log('PULSE: falha ao verificar autorização.');
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +28,7 @@ $usuarioNome = $_SESSION['usuario_nome'] ?? null;
 <body>
     <nav class="menu-container">
         <div class="logo">
-            <img src="img/logopulse.png" PULSE>
+            <img src="img/logopulse.png" alt="PULSE">
             <span>PULSE</span>
         </div>
 
@@ -48,6 +59,16 @@ $usuarioNome = $_SESSION['usuario_nome'] ?? null;
             <p>Painel administrativo para acompanhar pedidos, métricas e destaques.</p>
         </div>
 
+        <?php if (is_string($cadastroSucesso) && $cadastroSucesso !== ''): ?>
+            <p class="form-status" role="status" aria-live="polite"
+               style="padding: 12px 16px; margin: 16px 0; border: 1px solid #39ff14; border-radius: 8px; background: #102010; color: #aaff99;">
+                <?= pulse_h($cadastroSucesso) ?>
+            </p>
+        <?php endif; ?>
+
+        <?php if ($administrador): ?>
+            <p><a class="btn-primario" href="usuarios.php">Gestão de usuários</a></p>
+        <?php endif; ?>
         <div class="indicadores-grid">
             <div class="kpi-card">
                 <div class="kpi-titulo">Pedidos Hoje</div>

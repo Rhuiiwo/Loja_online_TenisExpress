@@ -2,88 +2,87 @@
 
 A PULSE é um e-commerce de venda de tênis desenvolvido com PHP, HTML, CSS, JavaScript e MySQL. O projeto reúne catálogo de produtos, carrinho no navegador, cadastro e autenticação de clientes, painel administrativo e formulário de pagamento.
 
-## Requisitos
+## Requisitos e instalação local
 
-- XAMPP com Apache, PHP e MySQL.
-- Navegador com suporte a JavaScript.
-- Git, para clonar o repositório, ou um programa para extrair arquivos ZIP.
+- XAMPP com Apache, PHP, MariaDB/MySQL e extensão PDO MySQL (e mbstring).
+- Navegador com JavaScript habilitado.
 
-## Instalação local
+1. Extraia o projeto em `C:\xampp\htdocs\pulse`, sem criar uma pasta pulse adicional.
+2. Inicie Apache e MySQL no XAMPP Control Panel.
+3. Abra `http://localhost/phpmyadmin/` e prepare uma base vazia.
+4. Importe os scripts abaixo, na ordem indicada.
+5. Confira o banco de destino e as credenciais em `database/conexao.php`. O ambiente validado na Sprint utiliza `db_pulse_instalacao_teste`.
+6. Abra `http://localhost/pulse/`.
 
-1. Instale o [XAMPP](https://www.apachefriends.org/) com Apache, PHP e MySQL.
-2. Baixe o projeto para a pasta `C:\xampp\htdocs\pulse`.
+### Ordem de instalação da Sprint 01
 
-   Para clonar com Git, abra o PowerShell e execute:
+1. `database/instruction.sql`
+2. `database/migrations/001_criacao_setores_perfis.sql`
+3. `database/migrations/002_adequacao_tabela_usuarios.sql`
+4. `database/migrations/003_relacionamentos_indices.sql`
+5. `database/migrations/004_dados_ficticios_homologacao.sql`
 
-   ```powershell
-   Set-Location C:\xampp\htdocs
-   git clone https://github.com/Rhuiiwo/Loja_online_TenisExpress
-   ```
+Confira previamente os comandos CREATE DATABASE e USE de todos os scripts, ajustando-os para a mesma base de destino. Não execute migrations novamente em uma base já migrada. Preserve o banco original.
 
-   Se baixar o projeto como ZIP, extraia o conteúdo para `C:\xampp\htdocs\pule`.
+A instalação em base independente foi registrada com 15 tabelas, 19 chaves estrangeiras, cinco setores, cinco perfis, seis usuários fictícios (cinco ativos e um baixado) e nenhum usuário órfão. Esses números descrevem a instalação inicial, não a base após os testes funcionais.
 
-3. Abra o **XAMPP Control Panel** e clique em **Start** para Apache e MySQL. Aguarde os dois serviços indicarem que estão ativos.
+### Solução de problemas
 
-4. Configure o banco pelo phpMyAdmin:
-   1. Abra [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
-   2. Acesse o phpmyadimin no navegador e clique em **Importar**, escolha o arquivo `database/instruction.sql` dentro da pasta do projeto e clique em Confimar.
-   3. Se a importação informar que o banco `db_pule` não existe ou não foi selecionado, crie esse banco, selecione-o e repita a importação.
-
-5. Confira [`database/conexao.php`](./database/conexao.php). A configuração padrão é host `localhost`, banco `db_pulse`, usuário `root` e senha vazia. Se alterou as credenciais do MySQL, atualize esse arquivo para usar os mesmos valores.
-
-6. Acesse o site pelo navegador em [http://localhost/pulse/](http://localhost/pulse/). Também é possível abrir diretamente [http://localhost/pulse/index.php](http://localhost/pulse/index.php).
-
-> Não abra `index.php` diretamente pelo Explorador de Arquivos. O Apache precisa estar ativo para executar o PHP.
-
-### Solução de problemas de acesso
-
-- **`ERR_CONNECTION_REFUSED`:** confirme que o Apache está ativo no XAMPP e tente novamente.
-- **Página não encontrada:** confira se a pasta do projeto está diretamente em `C:\xampp\htdocs\pulse`.
-- **Erro de conexão com o banco:** confirme que o MySQL está ativo, que o banco `db_pulse` foi importado e que as credenciais em `database/conexao.php` estão corretas.
-- **Apache usa outra porta:** se estiver configurado, por exemplo, na porta `8080`, acesse `http://localhost:8080/pulse/`.
+- Conexão recusada: confira o Apache e a porta configurada.
+- Erro 404: confira o nome da pasta e a extensão PHP.
+- Erro de banco: confira o serviço MySQL, a importação e a configuração PDO.
+- Não abra arquivos PHP diretamente pelo Explorador de Arquivos.
 
 ## Funcionalidades
 
-- Carrinho com inclusão, remoção e cálculo do total; os itens ficam no armazenamento local do navegador.
-- Cadastro e login com senha armazenada em hash e validação CSRF nos formulários.
-- Alternância entre temas claro e escuro e carrossel na página inicial.
-- Formulário de pagamento com campos que variam conforme o método escolhido e validação no navegador.
+- Catálogo, busca, carrinho local e revisão de pagamento.
+- Cadastro com setores e perfis consultados no banco, validação no servidor e senha em hash.
+- Login de usuários ativos e gestão de usuários restrita a administradores.
+- Listagem de ativos, pesquisa por nome/e-mail e JOIN com setores e perfis.
+- Confirmação de exclusão, baixa lógica e auditoria de cadastro e baixa.
 
 ## Estrutura do projeto
 
 ```text
-Pulse/
-├── index.php                 # Página inicial
-├── produtos.php              # Catálogo e busca
-├── carrinho.php              # Detalhes dos itens
-├── sobre.php                 # Informações da loja
-├── contatos.php              # Canais de contato
-├── cadastro.php              # Cadastro de cliente
-├── login.php                 # Autenticação
-├── dashboard.php             # Painel e carrinho
-├── pagamento.php             # Revisão dos dados de pagamento
-├── css/
-│   └── styles.css             # Estilos da interface
-├── js/
-│   └── site.js                # Interações do site
-├── database/
-│   ├── conexao.php            # Conexão com MySQL
-│   └── instruction.sql        # Estrutura do banco de dados
-├── includes/
-│   └── auth.php               # Sessão, CSRF e funções de autenticação
-├── docs/                      # Documentação complementar
-├── img/                       # Imagens da loja e dos produtos
-└── font/                      # Arquivos de fontes
+pulse/
+├── index.php
+├── produtos.php
+├── carrinho.php
+├── pagamento.php
+├── sobre.php
+├── contato.php
+├── cadastro.php
+├── login.php
+├── dashboard.php
+├── usuarios.php
+├── excluir_usuario.php
+├── css/style.css
+├── js/site.js
+├── js/carrinho.js
+├── includes/auth.php
+├── includes/auditoria.php
+├── database/conexao.php
+├── database/instruction.sql
+├── database/migrations/
+├── docs/
+├── img/
+└── font/
 ```
 
 ## Documentação
 
-- [Visão geral e arquitetura](./docs/visao-geral.md)
-- [Manual de uso](./docs/manual-do-usuario.md)
-- [Modelo de dados](./docs/modelo-de-dados.md)
+- [Visão geral](docs/visao-geral.md)
+- [Manual do usuário](docs/manual-do-usuario.md)
+- [Modelo de dados](docs/modelo-de-dados.md)
+- [Relatório da Sprint 01](docs/relatorio-sprint-01.md)
+- Evidências: `docs/evidencias/`
 
-## Segurança e operação
+## Segurança e limites
 
-As senhas de conta são protegidas com `password_hash` e verificadas com `password_verify`. O token CSRF protege as operações de cadastro e login. O carrinho não contém dados de pagamento.
+O módulo utiliza PDO com consultas preparadas, `password_hash`, `password_verify`, proteção CSRF e autorização administrativa no servidor. A baixa é realizada por POST, sem remoção física do usuário. O cadastro público não concede perfil administrativo. O usuário root do MySQL não equivale a um administrador da aplicação.
 
-O formulário de pagamento valida os campos no navegador e não grava dados de cartão ou Pix. A aplicação não possui integração com provedor de pagamentos; antes de aceitar pagamentos reais, conecte um provedor compatível e não encaminhe dados financeiros a endpoints não preparados para isso. Configure credenciais e HTTPS antes de disponibilizar o site publicamente.
+O carrinho utiliza armazenamento local. O checkout não efetua pagamentos reais nem persiste dados financeiros. Utilize apenas dados fictícios nos testes. Antes de publicar, configure HTTPS e credenciais próprias, com privilégios mínimos.
+
+## Conferência antes da entrega
+
+Conferir os scripts definitivos, os caminhos de evidências, a matriz de testes e a instalação a partir do ZIP final. Não incluir backups, credenciais reais ou arquivos temporários de diagnóstico. A implementação funcional não substitui a homologação do pacote final.
