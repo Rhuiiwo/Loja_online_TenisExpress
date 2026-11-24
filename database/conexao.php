@@ -9,7 +9,7 @@ function pulse_db(): PDO
 
     if ($pdo === null) {
         $host = 'localhost';
-        $database = 'db_pcstore';
+        $database = 'db_pulse';
         $username = 'root';
         $password = '';
 
