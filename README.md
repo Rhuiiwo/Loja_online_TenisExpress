@@ -83,6 +83,4 @@ O módulo utiliza PDO com consultas preparadas, `password_hash`, `password_verif
 
 O carrinho utiliza armazenamento local. O checkout não efetua pagamentos reais nem persiste dados financeiros. Utilize apenas dados fictícios nos testes. Antes de publicar, configure HTTPS e credenciais próprias, com privilégios mínimos.
 
-## Conferência antes da entrega
 
-Conferir os scripts definitivos, os caminhos de evidências, a matriz de testes e a instalação a partir do ZIP final. Não incluir backups, credenciais reais ou arquivos temporários de diagnóstico. A implementação funcional não substitui a homologação do pacote final.

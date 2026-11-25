@@ -4,9 +4,9 @@
 **Entrega:** Relatório consolidado dos Pontos 01 a 10  
 **Data:** 24/11/2026  
 **Ambiente:** Desenvolvimento local — XAMPP  
-**Versão do código:** a confirmar no pacote final  
-**Responsável pela execução:** Bruno Renato
-
+**Versão do código:** av1.0.0 — Sprint 01  
+**Responsável pela execução:** Bruno Renato dos Santos
+ 
 ---
 
 ## Resumo executivo
@@ -1975,6 +1975,6 @@ Os testes realizados permitiram verificar o funcionamento das funcionalidades im
 
 O trabalho desenvolvido estabelece uma base sólida, segura e organizada para a continuidade do projeto, contribuindo para a evolução das funcionalidades e o aprimoramento da aplicação nas próximas sprints.
 
-**Situação funcional:** dez pontos implementados conforme o relato de execução.  
-**Situação da entrega integrada:** pendente de conferência e organização do pacote final.  
+**Situação funcional:** dez pontos implementados, com testes funcionais realizados e evidências documentadas.  
+**Situação da entrega integrada:** documentação revisada e estrutura do projeto organizada para entrega acadêmica, considerando os resultados dos testes realizados anteriormente.  
 **Parecer do professor:** a preencher.
