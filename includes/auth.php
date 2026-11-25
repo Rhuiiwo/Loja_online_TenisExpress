@@ -65,7 +65,7 @@ function pulse_is_admin(?PDO $pdo = null): bool
 
         return $consulta->fetchColumn() !== false;
 
-    } catch (PDOException $exception) {
+    } catch (PDOException | RuntimeException $exception) {
         error_log('PULSE: falha na autorização administrativa.');
 
         return false;

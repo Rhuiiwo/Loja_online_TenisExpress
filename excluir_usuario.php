@@ -44,7 +44,7 @@ try {
         $pdo->commit();
         pulse_baixa_resposta('Usuário inexistente ou já baixado. Nenhuma alteração realizada.');
     }
-    $consulta = $pdo->prepare("UPDATE usuarios SET status = 'Baixa', baixado_em = CURRENT_TIMESTAMP WHERE id = :id AND status = 'Ativo'");
+    $consulta = $pdo->prepare("UPDATE usuarios SET status = 'Baixa', condicao = 'baixa', baixado_em = CURRENT_TIMESTAMP WHERE id = :id AND status = 'Ativo'");
     $consulta->execute(['id' => $id]);
     if ($consulta->rowCount() !== 1) {
         throw new RuntimeException('Baixa não efetuada.');

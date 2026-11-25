@@ -5,7 +5,7 @@
 **Data:** 24/11/2026  
 **Ambiente:** Desenvolvimento local — XAMPP  
 **Versão do código:** a confirmar no pacote final  
-**Responsável pela execução:** integrante da equipe (identificação a preencher)
+**Responsável pela execução:** Bruno Renato
 
 ---
 
@@ -1914,6 +1914,14 @@ os resultados confirmados pelo responsável.
 
 ---
 
+## Revisão de preparação da entrega — 25/11/2026
+
+- Scripts SQL e conexão PDO padronizados para `db_pulse`; a instalação histórica permanece registrada separadamente.
+- A revisão de `excluir_usuario.php` passou a atualizar `status = 'Baixa'`, `condicao = 'baixa'` e `baixado_em` na mesma operação transacional com auditoria.
+- Revisão do tratamento de falhas de conexão em `cadastro.php`, `login.php` e `includes/auth.php`.
+- Evidências complementares de regressão revisadas visualmente: listagem, pesquisa de ativo e baixado, redirecionamento sem autenticação, bloqueio de cliente e POST sem autorização (Ponto 10, capturas 16 a 21). Conferir os arquivos no pacote final.
+- Reteste integrado da versão revisada pendente: instalação isolada, cadastro, login, baixa com ambos os campos e auditoria. O tipo root e a estrutura de sessões não comprovam implementação de permissões exclusivas ou rastreamento automático de sessões.
+
 ## Matriz consolidada de testes obrigatórios — T01 a T12
 
 Data registrada da execução: 24/11/2026. Responsável: executor local da equipe (nome a preencher). A matriz consolida os resultados relatados nos pontos anteriores; os arquivos indicados devem ser conferidos no ZIP. Não equivale a uma nova execução dos testes.
@@ -1957,11 +1965,15 @@ Data registrada da execução: 24/11/2026. Responsável: executor local da equip
 - Complementar o teste de caracteres especiais (T12); os testes de falha forçada de auditoria, exclusão da própria conta e exceção de FK no INSERT não foram executados diretamente conforme o relatório.
 - Conferir sincronização entre a pasta de desenvolvimento e a pasta executada pelo XAMPP.
 
-Responsável pelas pendências: equipe do projeto. Prazo: antes da entrega definitiva.
+Responsável pelas pendências: Bruno Renato.
 
 ### Conclusão geral
 
-Os resultados registrados demonstram a implementação funcional do módulo de gestão de usuários, com persistência no banco, integridade referencial, consultas relacionais e baixa lógica auditada. A entrega acadêmica permanece condicionada à conferência dos itens finais acima. A aprovação e a nota são de competência do professor.
+Os resultados obtidos ao longo da Sprint 01 demonstram a implementação funcional do módulo de cadastro e gestão de usuários do sistema PULSE, contemplando a persistência de dados, a integridade referencial, as consultas relacionais, a validação de entradas, o controle de acesso e a exclusão lógica com registro de auditoria.
+
+Os testes realizados permitiram verificar o funcionamento das funcionalidades implementadas, identificar inconsistências e aplicar as correções necessárias, preservando a estrutura e a identidade visual do sistema.
+
+O trabalho desenvolvido estabelece uma base sólida, segura e organizada para a continuidade do projeto, contribuindo para a evolução das funcionalidades e o aprimoramento da aplicação nas próximas sprints.
 
 **Situação funcional:** dez pontos implementados conforme o relato de execução.  
 **Situação da entrega integrada:** pendente de conferência e organização do pacote final.  

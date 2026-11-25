@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
 
                 $mensagem = 'E-mail ou senha inválidos.';
-            } catch (PDOException $exception) {
+            } catch (PDOException | RuntimeException $exception) {
                 error_log('PULSE: falha no login.');
                 $mensagem = 'Não foi possível entrar. Confira a configuração do banco de dados.';
             }

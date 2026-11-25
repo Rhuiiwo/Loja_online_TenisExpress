@@ -9,7 +9,7 @@ A PULSE é um e-commerce de venda de tênis desenvolvido com PHP, HTML, CSS, Jav
 
 1. Extraia o projeto em `C:\xampp\htdocs\pulse`, sem criar uma pasta pulse adicional.
 2. Inicie Apache e MySQL no XAMPP Control Panel.
-3. Abra `http://localhost/phpmyadmin/` e prepare uma base vazia.
+3. Abra `http://localhost/phpmyadmin/` e confirme que `db_pulse` não existe ou está vazio; se contiver dados, não prossiga nesse servidor.
 4. Importe os scripts abaixo, na ordem indicada.
 5. Confira o banco de destino e as credenciais em `database/conexao.php`. A configuração de entrega utiliza `db_pulse`. O ambiente histórico de homologação utilizou `db_pulse_instalacao_teste`.
 6. Abra `http://localhost/pulse/`.
@@ -79,7 +79,7 @@ pulse/
 
 ## Segurança e limites
 
-O módulo utiliza PDO com consultas preparadas, `password_hash`, `password_verify`, proteção CSRF e autorização administrativa no servidor. A baixa é realizada por POST, sem remoção física do usuário. O cadastro público não concede perfil administrativo. O usuário root do MySQL não equivale a um administrador da aplicação.
+O módulo utiliza PDO com consultas preparadas, `password_hash`, `password_verify`, proteção CSRF e autorização administrativa no servidor. A baixa é realizada por POST, sem remoção física do usuário. Na revisão final, a operação passou a atualizar `status`, `condicao` e `baixado_em` na mesma transação com a auditoria; o reteste integrado está pendente. O cadastro público não concede perfil administrativo. O usuário root do MySQL não equivale a um administrador da aplicação.
 
 O carrinho utiliza armazenamento local. O checkout não efetua pagamentos reais nem persiste dados financeiros. Utilize apenas dados fictícios nos testes. Antes de publicar, configure HTTPS e credenciais próprias, com privilégios mínimos.
 

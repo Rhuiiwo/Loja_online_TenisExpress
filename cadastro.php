@@ -4,7 +4,6 @@ require_once __DIR__ . '/database/conexao.php';
 require_once __DIR__ . '/includes/auditoria.php';
 $mensagem = '';
 $erros = [];
-$mensagem = '';
 $nome = '';
 $email = '';
 $setor_id = null;
@@ -40,7 +39,7 @@ try {
     if (!$referenciasDisponiveis) {
         $mensagem = 'Cadastro temporariamente indisponível. Não existem setores ou perfis disponíveis.';
     }
-} catch (PDOException $exception) {
+} catch (PDOException | RuntimeException $exception) {
     error_log('PULSE: falha ao consultar referências.');
     $mensagem = 'Serviço temporariamente indisponível. Tente novamente mais tarde.';
 }

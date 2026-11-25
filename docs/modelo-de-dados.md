@@ -52,7 +52,7 @@ A estrutura contempla as tabelas `sessoes_usuarios` e `auditoria_sistema`, desti
 
 A auditoria de cadastro e baixa lógica registra operações em `auditoria_sistema`. A estrutura de sessões existe, mas o registro automático de início e fim de cada sessão não foi comprovado no material revisado.
 
-A baixa lógica altera `usuarios.status` para `Baixa` e preenche `baixado_em`, preservando o registro e seus relacionamentos. O campo `tipo` é utilizado na autorização administrativa da aplicação.
+Na revisão final, a baixa lógica altera `usuarios.status` para `Baixa`, `condicao` para `baixa` e preenche `baixado_em`, preservando o registro e seus relacionamentos. O campo `tipo` é utilizado na autorização administrativa da aplicação.
 
 A tabela `auditoria_sistema` possui identificadores do responsável e do usuário afetado (quando disponíveis), ação, entidade, registro, descrição e data de criação, além de campos opcionais de valores anterior/novo e IP. Senhas e tokens não devem ser registrados.
 
@@ -109,7 +109,7 @@ O cadastro e o login utilizam a tabela `usuarios`. O carrinho da interface perma
 
 ## Limite da validação
 
-A estrutura prevista pelos scripts corrigidos possui 14 campos e sete índices em usuarios. O tipo root e o campo condicao são preservados como estrutura; a aplicação da Sprint utiliza status e autorização administrativa. Não foi demonstrada uma regra exclusiva de root nem sincronização automática entre condicao e status. A existência das tabelas não comprova, por si só, a integração funcional de todos os módulos.
+A estrutura prevista pelos scripts corrigidos possui 14 campos e sete índices em usuarios. O tipo root e o campo condicao são preservados como estrutura; a aplicação da Sprint utiliza status e autorização administrativa. Não foi demonstrada uma regra exclusiva de root nem sincronização automática global entre condicao e status. A atualização conjunta foi implementada no endpoint de baixa e aguarda reteste integrado. A existência das tabelas não comprova, por si só, a integração funcional de todos os módulos.
 
 ## Inicialização
 
