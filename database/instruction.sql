@@ -14,9 +14,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
     telefone VARCHAR(20),
     cpf CHAR(11) UNIQUE,
     tipo ENUM('cliente','vendedor','administrador','root') NOT NULL DEFAULT 'cliente',
-    condicao ENUM('ativo','inativo','suspenso','baixa') NOT NULL DEFAULT 'ativo';
+    condicao ENUM('ativo','inativo','suspenso','baixa') NOT NULL DEFAULT 'ativo',
     criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    ALTER TABLE usuarios ADD COLUMN baixado_em DATETIME NULL,
     INDEX idx_usuario_tipo_condicao (tipo, condicao)
 ) ENGINE=InnoDB;
 

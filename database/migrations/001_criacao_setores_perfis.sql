@@ -6,7 +6,7 @@
 -- Criacao das tabelas setores e perfis
 -- =====================================================
 
-USE `db_pulse_homologacao`;
+USE `db_pulse`;
 
 -- =====================================================
 -- 1. TABELA SETORES

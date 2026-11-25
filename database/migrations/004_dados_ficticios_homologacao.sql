@@ -1,27 +1,17 @@
-
--- ============================================================
+-- =====================================================
 -- PROJETO: PULSE
 -- SPRINT 01 - PONTO 02
--- MIGRATION 004 - Dados ficticios de homologacao
--- ============================================================
+-- MIGRATION 004
+-- Dados ficticios de homologacao
+-- =====================================================
 
-USE `db_pulse_homologacao`;
+USE `db_pulse`;
 
--- ============================================================
--- 1. CONFIGURACAO DA SENHA FICTICIA
--- Substituir pelo hash gerado com password_hash() do PHP.
--- ============================================================
-
-SET @senha_hash = '$2y$12$OC9vFqJfwKKYS7momCgTpuTh13hE3MWNDxHUs4CQksfQh3RIA/gFW';
-
--- ============================================================
--- 2. INSERCAO DOS USUARIOS FICTICIOS
--- ============================================================
+SET @senha_hash = '$2y$12$QPZMjtXDwJyGUIUTZYY3MOIZGZIoBiQz/X1XL4tHvblOuSa2nHcZO';
 
 START TRANSACTION;
 
-INSERT INTO `usuarios`
-(
+INSERT INTO `usuarios` (
     `nome`,
     `email`,
     `senha_hash`,
@@ -29,17 +19,17 @@ INSERT INTO `usuarios`
     `setor_id`,
     `perfil_id`,
     `status`,
+    `condicao`,
     `baixado_em`
-)
-VALUES
+) VALUES
 (
     'Administrador Teste',
     'admin@pulse.example',
     @senha_hash,
     'administrador',
-    1,
-    1,
+    1, 1,
     'Ativo',
+    'ativo',
     NULL
 ),
 (
@@ -47,9 +37,9 @@ VALUES
     'vendedor@pulse.example',
     @senha_hash,
     'vendedor',
-    2,
-    2,
+    2, 2,
     'Ativo',
+    'ativo',
     NULL
 ),
 (
@@ -57,9 +47,9 @@ VALUES
     'atendente@pulse.example',
     @senha_hash,
     'cliente',
-    3,
-    3,
+    3, 3,
     'Ativo',
+    'ativo',
     NULL
 ),
 (
@@ -67,9 +57,9 @@ VALUES
     'estoque@pulse.example',
     @senha_hash,
     'cliente',
-    4,
-    4,
+    4, 4,
     'Ativo',
+    'ativo',
     NULL
 ),
 (
@@ -77,9 +67,9 @@ VALUES
     'cliente@pulse.example',
     @senha_hash,
     'cliente',
-    5,
-    5,
+    5, 5,
     'Ativo',
+    'ativo',
     NULL
 ),
 (
@@ -87,24 +77,20 @@ VALUES
     'baixado@pulse.example',
     @senha_hash,
     'cliente',
-    5,
-    5,
+    5, 5,
     'Baixa',
+    'baixa',
     CURRENT_TIMESTAMP
 );
 
 COMMIT;
 
--- ============================================================
--- 3. VALIDACAO DA QUANTIDADE DE REGISTROS
--- ============================================================
+-- VALIDACAO DA QUANTIDADE DE USUARIOS
 
 SELECT COUNT(*) AS total_usuarios
 FROM `usuarios`;
 
--- ============================================================
--- 4. VALIDACAO DOS STATUS
--- ============================================================
+-- VALIDACAO DOS STATUS
 
 SELECT
     `status`,
@@ -112,9 +98,7 @@ SELECT
 FROM `usuarios`
 GROUP BY `status`;
 
--- ============================================================
--- 5. VALIDACAO DOS RELACIONAMENTOS
--- ============================================================
+-- VALIDACAO DOS RELACIONAMENTOS
 
 SELECT
     u.id,
@@ -124,6 +108,7 @@ SELECT
     s.nome AS setor,
     p.nome AS perfil,
     u.status,
+    u.condicao,
     u.criado_em,
     u.baixado_em
 FROM `usuarios` AS u

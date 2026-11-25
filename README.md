@@ -11,7 +11,7 @@ A PULSE é um e-commerce de venda de tênis desenvolvido com PHP, HTML, CSS, Jav
 2. Inicie Apache e MySQL no XAMPP Control Panel.
 3. Abra `http://localhost/phpmyadmin/` e prepare uma base vazia.
 4. Importe os scripts abaixo, na ordem indicada.
-5. Confira o banco de destino e as credenciais em `database/conexao.php`. O ambiente validado na Sprint utiliza `db_pulse_instalacao_teste`.
+5. Confira o banco de destino e as credenciais em `database/conexao.php`. A configuração de entrega utiliza `db_pulse`. O ambiente histórico de homologação utilizou `db_pulse_instalacao_teste`.
 6. Abra `http://localhost/pulse/`.
 
 ### Ordem de instalação da Sprint 01
@@ -22,7 +22,7 @@ A PULSE é um e-commerce de venda de tênis desenvolvido com PHP, HTML, CSS, Jav
 4. `database/migrations/003_relacionamentos_indices.sql`
 5. `database/migrations/004_dados_ficticios_homologacao.sql`
 
-Confira previamente os comandos CREATE DATABASE e USE de todos os scripts, ajustando-os para a mesma base de destino. Não execute migrations novamente em uma base já migrada. Preserve o banco original.
+Os cinco scripts corrigidos apontam para `db_pulse`. Execute somente em uma instalação vazia e isolada, nunca sobre o banco existente de trabalho. A versão corrigida ainda precisa de teste integrado. Não execute migrations novamente em uma base já migrada. Preserve o banco original.
 
 A instalação em base independente foi registrada com 15 tabelas, 19 chaves estrangeiras, cinco setores, cinco perfis, seis usuários fictícios (cinco ativos e um baixado) e nenhum usuário órfão. Esses números descrevem a instalação inicial, não a base após os testes funcionais.
 

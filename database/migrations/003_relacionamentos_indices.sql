@@ -6,8 +6,7 @@
 -- Relacionamentos e indices
 -- =====================================================
 
-USE `db_pulse_homologacao`;
-
+USE `db_pulse`;
 -- =====================================================
 -- 1. CAMPOS OBRIGATORIOS, INDICES E CHAVES ESTRANGEIRAS
 -- Executar somente apos verificar que usuarios esta vazia

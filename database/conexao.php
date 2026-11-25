@@ -1,4 +1,3 @@
-
 <?php
 
 /**
@@ -19,7 +18,7 @@ function pulse_db(): PDO
     }
 
     $host = getenv('PULSE_DB_HOST') ?: 'localhost';
-    $database = getenv('PULSE_DB_NAME') ?: 'db_pulse_instalacao_teste';
+    $database = getenv('PULSE_DB_NAME') ?: 'db_pulse';
     $username = getenv('PULSE_DB_USER') ?: 'root';
 
     $password = getenv('PULSE_DB_PASSWORD');

@@ -1,6 +1,6 @@
 # Modelo de dados
 
-O esquema é criado pelo script [`instruction.sql`](../database/instruction.sql) e pelas quatro migrations descritas no [README](../README.md). A instalação da Sprint foi validada em `db_pulse_instalacao_teste`. Os registros persistentes descritos abaixo usam InnoDB e chaves estrangeiras para manter a integridade entre entidades.
+O esquema é criado pelo script [`instruction.sql`](../database/instruction.sql) e pelas quatro migrations descritas no [README](../README.md). A instalação histórica da Sprint foi validada em `db_pulse_instalacao_teste`; a versão corrigida destina-se a `db_pulse` e ainda requer homologação. Os registros persistentes descritos abaixo usam InnoDB e chaves estrangeiras para manter a integridade entre entidades.
 
 ## Atualização do modelo de dados — Sprint 01
 
@@ -14,10 +14,11 @@ O esquema é criado pelo script [`instruction.sql`](../database/instruction.sql)
 | senha_hash | VARCHAR(255) | NOT NULL |
 | telefone | VARCHAR(20) | Opcional |
 | cpf | CHAR(11) | UNIQUE, opcional |
-| tipo | ENUM | cliente, vendedor, administrador |
+| tipo | ENUM | cliente, vendedor, administrador, root |
 | setor_id | BIGINT UNSIGNED | FK, NOT NULL |
 | perfil_id | BIGINT UNSIGNED | FK, NOT NULL |
 | status | ENUM | Ativo, Baixa |
+| condicao | ENUM | ativo, inativo, suspenso, baixa; padrão ativo |
 | criado_em | TIMESTAMP | Data de criação |
 | atualizado_em | TIMESTAMP | Atualização automática |
 | baixado_em | TIMESTAMP | Data da baixa, opcional |
@@ -40,6 +41,7 @@ A utilização de chaves estrangeiras evita referências inválidas e a duplica�
 - PRIMARY
 - email
 - cpf
+- idx_usuario_tipo_condicao
 - idx_usuarios_setor
 - idx_usuarios_perfil
 - idx_usuarios_status
@@ -107,7 +109,7 @@ O cadastro e o login utilizam a tabela `usuarios`. O carrinho da interface perma
 
 ## Limite da validação
 
-Este modelo descreve a estrutura de 13 campos de `usuarios` e seis índices registrada nos testes da Sprint. O documento anterior também mencionava `root`, `condicao` e `idx_usuario_tipo_condicao`, que não constavam dessa estrutura validada. Caso tenham sido adicionados posteriormente, será necessário conferir o SQL definitivo e atualizar este modelo. A existência das tabelas não comprova, por si só, a integração funcional de todos os módulos.
+A estrutura prevista pelos scripts corrigidos possui 14 campos e sete índices em usuarios. O tipo root e o campo condicao são preservados como estrutura; a aplicação da Sprint utiliza status e autorização administrativa. Não foi demonstrada uma regra exclusiva de root nem sincronização automática entre condicao e status. A existência das tabelas não comprova, por si só, a integração funcional de todos os módulos.
 
 ## Inicialização
 
